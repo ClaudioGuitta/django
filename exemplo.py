@@ -38,8 +38,8 @@ na view
 
 @login_required
 def ranking(request):
-    lista = ControleMeta.objects.annotate(usuario=F('user_name')).values('usuario')
-    return render(request, 'templatesCH/ranking.html',{'lista':lista})
+    pts = ControleMeta.objects.all()
+    return render(request, 'templatesCH/ranking.html',{'pts':pts})
 
 no template
 
